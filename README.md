@@ -18,17 +18,6 @@ This project simulates the full analytics workflow an ecommerce data analyst wou
 
 ---
 
-## Dataset
-
-Four raw files simulating a real client data dump:
-
-| File | Source | Rows | Description |
-|---|---|---|---|
-| `GlowRitual_Orders_Raw.xlsx` | Shopify Admin → Orders → Export | 1,818 | One row per line item. Contains duplicates, mixed date formats, currency symbols in numeric fields, blank rows, accidental totals row |
-| `GlowRitual_Customers_Raw.xlsx` | Shopify Admin → Customers → Export | 680 | One row per customer. Contains missing IDs, inconsistent capitalisation, mixed accepts-marketing formats |
-| `GlowRitual_Products_Raw.xlsx` | Shopify Admin → Products → Export | 8 products + 96 inventory movements | Contains missing cost prices, inconsistent status values, HTML in description fields |
-| `GlowRitual_Klaviyo_Raw.xlsx` | Klaviyo → Campaigns + Flows | 31 campaigns, 10 flows | Contains duplicate campaign sends, metrics stored as comma-strings, mixed date formats, mixed percentage formats |
-
 ### Data Quality Issues Found and Fixed
 
 | Issue | Column(s) | Fix Applied |
