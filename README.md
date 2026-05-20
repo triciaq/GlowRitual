@@ -42,7 +42,6 @@ They needed someone to tell them not just *what* the numbers were — but *why*,
 
 ## Dataset
 
-Four raw files exactly as a Shopify/Klaviyo client would export them — with realistic mess included.
 
 | File | Source | Records | Mess Present |
 |---|---|---|---|
@@ -210,7 +209,7 @@ Analysed GlowRitual's full Klaviyo programme against DTC beauty benchmarks.
 
 ---
 
-## Key Recommendations Delivered to Client
+## Key Recommendations 
 
 **1. Build the 30-day post-purchase sequence immediately.**
 The data showed month 1 retention below 13% across all cohorts. A 3-email sequence (thank you → education → review request) targeting the first 14 days addresses the highest-leverage gap in the entire customer journey.
@@ -230,42 +229,3 @@ The hero serum lasts approximately 45 days. No automated reorder prompt existed.
 
 ```
 Python 3.x · pandas · openpyxl · Jupyter Notebook
-```
-
----
-
-## Repository Structure
-
-```
-glowritual-analytics/
-│
-├── data/
-│   ├── raw/
-│   │   ├── GlowRitual_Orders_Raw.xlsx
-│   │   ├── GlowRitual_Customers_Raw.xlsx
-│   │   ├── GlowRitual_Products_Raw.xlsx
-│   │   └── GlowRitual_Klaviyo_Raw.xlsx
-│   └── clean/
-│       └── GlowRitual_Cohort_Analysis.xlsx
-│
-├── notebooks/
-│   └── GlowRitual_Analysis.ipynb
-│
-└── README.md
-```
-
----
-
-## About
-
-**Tricia Naggayi — Ecommerce Analytics Consultant**
-Specialising in DTC beauty and personal care brands on Shopify at the $200K–$2M revenue stage.
-
-I help brands understand what their data is actually saying — and translate that into actions that grow revenue from the customers they already have.
-
-📧 patricianaggayi9@gmail.com
-🔗 [linkedin.com/in/patricia-naggayi-277822204](https://linkedin.com/in/patricia-naggayi-277822204)
-
----
-
-*All brand data in this project is fictional and generated for portfolio purposes. The analytical methodology, code, and findings reflect real ecommerce analytics practice.*
