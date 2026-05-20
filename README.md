@@ -50,41 +50,7 @@ pandas
 openpyxl
 Jupyter Notebook
 ```
-
----
-
-## Project Structure
-
-```
-glowritual-analytics/
-│
-├── data/
-│   ├── raw/
-│   │   ├── GlowRitual_Orders_Raw.xlsx
-│   │   ├── GlowRitual_Customers_Raw.xlsx
-│   │   ├── GlowRitual_Products_Raw.xlsx
-│   │   └── GlowRitual_Klaviyo_Raw.xlsx
-│   └── clean/
-│       └── GlowRitual_Cohort_Analysis.xlsx
-│
-├── notebooks/
-│   └── GlowRitual_Analysis.ipynb
-│
-└── README.md
-```
-
----
-
-## Analysis Walkthrough
-
-### Step 1 — Data Audit
-Before writing a single formula, audit every file:
-- Count rows and columns
-- Check data types per column (`df.dtypes`)
-- Identify nulls (`df.isnull().sum()`)
-- Spot structural issues (totals rows, blank rows, duplicates)
-
-### Step 2 — Data Cleaning
+### Data Cleaning
 
 ```python
 # Strip currency symbols and convert to numeric
@@ -103,7 +69,7 @@ orders = orders[~orders['Order ID'].astype(str).str.contains('TOTAL', na=False)]
 
 **Result:** 1,818 raw rows → 1,743 clean rows (removed 69 duplicates, 6 blank rows, 1 totals row)
 
-### Step 3 — Cohort Analysis
+### Cohort Analysis
 
 Tag every customer with their first purchase month (cohort), then track whether they returned in subsequent months.
 
@@ -126,7 +92,7 @@ retention_table = cohort_pivot.divide(cohort_pivot[0], axis=0).round(3) * 100
 
 **Key finding:** Month 1 retention across all cohorts ranged from **6.2% to 12.9%** — confirming that the majority of customers churn within the first 30 days of acquisition.
 
-### Step 4 — LTV Modelling
+### LTV Modelling
 
 ```python
 orders['Line Revenue'] = orders['Qty'] * orders['Unit Price']
@@ -184,26 +150,3 @@ GlowRitual was spending on ads to acquire customers who bought once and disappea
 
 3. **The email list was underperforming.** Klaviyo data shows the Win-Back flow was paused, the post-purchase flow was only partially active, and no replenishment reminder existed — despite the hero serum lasting approximately 45 days.
 
----
-
-## What's Next (In Progress)
-
-- [ ] Complete LTV model with right-censoring correction for late cohorts
-- [ ] RFM segmentation (Champions, Loyal, At-Risk, Lost)
-- [ ] Klaviyo email audit — open rates, click rates, revenue attribution by flow
-- [ ] Product-level analysis — which SKU produces the most loyal buyers
-- [ ] Client-ready summary report
-
----
-
-## Author
-
-**Tricia | Ecommerce Analytics Consultant**
-Specialising in DTC beauty brands on Shopify ($200K–$2M revenue stage)
-
-📧 patricianaggayi9@gmail.com
-🔗 [linkedin.com/in/patricia-naggayi-277822204](https://linkedin.com/in/patricia-naggayi-277822204)
-
----
-
-*This project is part of a portfolio of ecommerce analytics case studies. All brand data is fictional and generated for practice purposes.*
